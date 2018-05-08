@@ -40,10 +40,10 @@ function setChaincodePath(){
 	LANGUAGE=`echo "$LANGUAGE" | tr '[:upper:]' '[:lower:]'`
 	case "$LANGUAGE" in
 		"golang")
-		CC_SRC_PATH="github.com/example_cc/go"
+		CC_SRC_PATH="github.com/cgschaincode"
 		;;
 		"node")
-		CC_SRC_PATH="$PWD/artifacts/src/github.com/example_cc/node"
+		CC_SRC_PATH="$PWD/artifacts/src/github.com/cgschaincode"
 		;;
 		*) printf "\n ------ Language $LANGUAGE is not supported yet ------\n"$
 		exit 1
@@ -154,7 +154,7 @@ curl -s -X POST \
 	\"chaincodeName\":\"mycc\",
 	\"chaincodeVersion\":\"v0\",
 	\"chaincodeType\": \"$LANGUAGE\",
-	\"args\":[\"a\",\"100\",\"b\",\"200\"]
+	\"args\":[\"\"]
 }"
 echo
 echo
@@ -167,8 +167,8 @@ TRX_ID=$(curl -s -X POST \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"move",
-	"args":["a","b","10"]
+	"fcn":"initBank",
+	"args":["BANK002" , "BANK 002" , "002"]
 }')
 echo "Transacton ID is $TRX_ID"
 echo
@@ -177,7 +177,7 @@ echo
 echo "GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK002%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
