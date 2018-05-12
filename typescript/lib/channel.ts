@@ -471,10 +471,12 @@ export async function queryChaincode(
         if (responsePayloads) {
 
             responsePayloads.forEach((rp) => {
-                logger.info(args[0] + ' now has ' + rp.toString('utf8') +
-                    ' after the move');
-                return args[0] + ' now has ' + rp.toString('utf8') +
-                    ' after the move';
+                //logger.info(args[0] + ' now has ' + rp.toString('utf8') +
+                //    ' after the move');
+                //return args[0] + ' now has ' + rp.toString('utf8') +
+                //    ' after the move';
+                logger.info(rp.toString('utf8'));
+                return rp.toString('utf8');
             });
 
         } else {
