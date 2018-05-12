@@ -75,89 +75,6 @@ echo
 echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
-echo "POST request Create channel  ..."
-echo
-curl -s -X POST \
-  http://localhost:4000/channels \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"channelName":"mychannel",
-	"channelConfigPath":"../artifacts/channel/mychannel.tx"
-}'
-echo
-echo
-sleep 5
-echo "POST request Join channel on Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/peers \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"]
-}'
-echo
-echo
-
-echo "POST request Join channel on Org2"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/peers \
-  -H "authorization: Bearer $ORG2_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org2.example.com","peer1.org2.example.com"]
-}'
-echo
-echo
-
-echo "POST Install chaincode on Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/chaincodes \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d "{
-	\"peers\": [\"peer0.org1.example.com\",\"peer1.org1.example.com\"],
-	\"chaincodeName\":\"mycc\",
-	\"chaincodePath\":\"$CC_SRC_PATH\",
-	\"chaincodeType\": \"$LANGUAGE\",
-	\"chaincodeVersion\":\"v0\"
-}"
-echo
-echo
-
-echo "POST Install chaincode on Org2"
-echo
-curl -s -X POST \
-  http://localhost:4000/chaincodes \
-  -H "authorization: Bearer $ORG2_TOKEN" \
-  -H "content-type: application/json" \
-  -d "{
-	\"peers\": [\"peer0.org2.example.com\",\"peer1.org2.example.com\"],
-	\"chaincodeName\":\"mycc\",
-	\"chaincodePath\":\"$CC_SRC_PATH\",
-	\"chaincodeType\": \"$LANGUAGE\",
-	\"chaincodeVersion\":\"v0\"
-}"
-echo
-echo
-
-echo "POST instantiate chaincode on peer1 of Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d "{
-	\"chaincodeName\":\"mycc\",
-	\"chaincodeVersion\":\"v0\",
-	\"chaincodeType\": \"$LANGUAGE\",
-	\"args\":[\"\"]
-}"
-echo
-echo
 
 echo "POST invoke chaincode on peers of Org1"
 echo
@@ -189,20 +106,6 @@ echo "Transacton ID is $TRX_ID2"
 echo
 echo
 
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID3=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"initBank",
-	"args":["BANKCBC" , "BANK CBC" , "CBC"]
-}')
-echo "Transacton ID is $TRX_ID3"
-echo
-echo
 
 echo "POST invoke chaincode on peers of Org1"
 echo

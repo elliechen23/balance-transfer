@@ -168,35 +168,6 @@ echo "Transacton ID is $TRX_ID6"
 echo
 echo
 
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID7=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"securityTransfer",
-	"args":["S","002000000001" , "004000000001" , "A07103" , "102000","100000","true"]
-}')
-echo "Transacton ID is $TRX_ID7"
-echo
-echo
-
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID8=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"securityTransfer",
-	"args":["B","004000000001" , "002000000001" , "A07103" , "102000","100000","true"]
-}')
-echo "Transacton ID is $TRX_ID8"
-echo
-echo
 
 
 echo "GET query chaincode on peer1 of Org1"
@@ -294,7 +265,7 @@ echo
 
 echo "GET query Transaction by TransactionID"
 echo
-curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID8?peer=peer0.org1.example.com \
+curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID6?peer=peer0.org1.example.com \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
