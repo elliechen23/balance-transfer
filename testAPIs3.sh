@@ -76,7 +76,7 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-
+echo "自行FOP-BANK002"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID1=$(curl -s -X POST \
@@ -92,6 +92,7 @@ echo "Transacton ID is $TRX_ID1"
 echo
 echo
 
+echo "自行FOP-BANK002"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID2=$(curl -s -X POST \
@@ -107,7 +108,7 @@ echo "Transacton ID is $TRX_ID2"
 echo
 echo
 
-
+echo "跨行FOP-BANK002, BANK004"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID3=$(curl -s -X POST \
@@ -123,6 +124,7 @@ echo "Transacton ID is $TRX_ID3"
 echo
 echo
 
+echo "跨行FOP-BANK002, BANK004"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID4=$(curl -s -X POST \
@@ -138,6 +140,7 @@ echo "Transacton ID is $TRX_ID4"
 echo
 echo
 
+echo "跨行DVP-BANK002, BANK004"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID5=$(curl -s -X POST \
@@ -153,6 +156,7 @@ echo "Transacton ID is $TRX_ID5"
 echo
 echo
 
+echo "跨行DVP-BANK002, BANK004"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID6=$(curl -s -X POST \

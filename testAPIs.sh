@@ -144,35 +144,6 @@ curl -s -X POST \
 echo
 echo
 
-echo "POST instantiate chaincode on peer1 of Org1"
-echo
-curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d "{
-	\"chaincodeName\":\"mycc\",
-	\"chaincodeVersion\":\"v0\",
-	\"chaincodeType\": \"$LANGUAGE\",
-	\"args\":[\"\"]
-}"
-echo
-echo
-
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"initBank",
-	"args":["BANKCBC" , "BANK CBC" , "CBC"]
-}')
-echo "Transacton ID is $TRX_ID"
-echo
-echo
 
 echo "GET query chaincode on peer1 of Org1"
 echo
@@ -192,13 +163,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Transaction by TransactionID"
-echo
-curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID?peer=peer0.org1.example.com \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json"
-echo
-echo
+
 
 ############################################################################
 ### TODO: What to pass to fetch the Block information
@@ -233,14 +198,6 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Instantiated chaincodes"
-echo
-curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes?peer=peer0.org1.example.com" \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json"
-echo
-echo
 
 echo "GET query Channels"
 echo
