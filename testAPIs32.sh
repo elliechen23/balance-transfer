@@ -76,7 +76,12 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
+<<<<<<< HEAD
 echo "跨行DVP-BANK002, BANK004放行交易"
+=======
+
+echo "公債利息更新"
+>>>>>>> origin/master
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID1=$(curl -s -X POST \
@@ -85,8 +90,13 @@ TRX_ID1=$(curl -s -X POST \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
+<<<<<<< HEAD
 	"fcn":"submitApproveTransaction",
 	"args":["B","002000000001" , "004000000001" , "A07106" , "102000","100000","true","BANK002B00200000000120180608051139","BANKCBC"]
+=======
+	"fcn":"updateOwnerInterest",
+	"args":["A07103"]
+>>>>>>> origin/master
 }')
 echo "Transacton ID is $TRX_ID1"
 echo
@@ -195,6 +205,7 @@ curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID1?pe
 echo
 echo
 
+<<<<<<< HEAD
 echo "GET query Transaction by TransactionID"
 echo
 curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID2?peer=peer0.org1.example.com \
@@ -203,6 +214,8 @@ curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID2?pe
 echo
 echo
 
+=======
+>>>>>>> origin/master
 ############################################################################
 ### TODO: What to pass to fetch the Block information
 ############################################################################

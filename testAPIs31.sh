@@ -77,8 +77,12 @@ echo
 echo
 
 
+<<<<<<< HEAD
 
 echo "跨行DVP-BANK002, BANK004更正交易"
+=======
+echo "跨行DVP-BANK002, BANK004放行交易"
+>>>>>>> origin/master
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID3=$(curl -s -X POST \
@@ -87,8 +91,13 @@ TRX_ID3=$(curl -s -X POST \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
+<<<<<<< HEAD
 	"fcn":"securityCorrectTransfer",
 	"args":["B","002000000001" , "004000000001" , "A07106" , "102000","100000","true","BANK002B00200000000120180608091429"]
+=======
+	"fcn":"submitApproveTransaction",
+	"args":["B","002000000001" , "004000000001" , "A07103" , "102000","100000","true","BANK002B00200000000120180513123104","BANKCBC"]
+>>>>>>> origin/master
 }')
 echo "Transacton ID is $TRX_ID3"
 echo
