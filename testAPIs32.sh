@@ -76,56 +76,22 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-
-
-echo "跨行DVP-BANK002, BANK004更正交易"
+echo "跨行DVP-BANK002, BANK004放行交易"
 echo "POST invoke chaincode on peers of Org1"
 echo
-TRX_ID3=$(curl -s -X POST \
+TRX_ID1=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"securityCorrectTransfer",
-	"args":["B","002000000001" , "004000000001" , "A07106" , "102000","100000","true","BANK002B00200000000120180608091429"]
+	"fcn":"submitApproveTransaction",
+	"args":["B","002000000001" , "004000000001" , "A07106" , "102000","100000","true","BANK002B00200000000120180608051139","BANKCBC"]
 }')
-echo "Transacton ID is $TRX_ID3"
+echo "Transacton ID is $TRX_ID1"
 echo
 echo
 
-echo "跨行DVP-BANK004, BANK002日終取消交易"
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID3=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"submitEndDayTransaction",
-	"args":["BANK004B00400000000120180608091434","BANKCBC"]
-}')
-echo "Transacton ID is $TRX_ID3"
-echo
-echo
-
-
-echo "公債利息更新"
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID7=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"updateOwnerInterest",
-	"args":["A07106"]
-}')
-echo "Transacton ID is $TRX_ID7"
-echo
-echo
 
 
 echo "GET query chaincode on peer1 of Org1"
@@ -236,7 +202,6 @@ curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID2?pe
   -H "content-type: application/json"
 echo
 echo
-
 
 ############################################################################
 ### TODO: What to pass to fetch the Block information
