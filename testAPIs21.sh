@@ -76,74 +76,41 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-echo "公債利息更新"
-echo "POST invoke chaincode on peers of Org1"
+
+
+
+echo "changeSecurity 005000000001"
 echo
-TRX_ID7=$(curl -s -X POST \
+TRX_ID15=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"updateOwnerInterest",
-	"args":["A07106"]
+	"fcn":"changeSecurity",
+	"args":["A07106","107A06","2018/06/02","2028/06/02","1","10","25000000000","005000000001","005","10000000","0"]
 }')
-echo "Transacton ID is $TRX_ID7"
+echo "Transacton ID is $TRX_ID15"
 echo
 echo
 
-echo "公債利息更新002"
-echo "POST invoke chaincode on peers of Org1"
+echo "changeSecurity 005000000002"
 echo
-TRX_ID24=$(curl -s -X POST \
+TRX_ID16=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"changeBankSecurityTotals",
-	"args":["A07106","002","20190701"]
+	"fcn":"changeSecurity",
+	"args":["A07106","107A06","2018/06/02","2028/06/02","1","10","25000000000","005000000002","005","10000000","0"]
 }')
-echo "Transacton ID is $TRX_ID24"
-echo
-echo
-
-echo "公債利息更新004"
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID25=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"changeBankSecurityTotals",
-	"args":["A07106","004","20190701"]
-}')
-echo "Transacton ID is $TRX_ID25"
-echo
-echo
-
-echo "公債利息更新005"
-echo "POST invoke chaincode on peers of Org1"
-echo
-TRX_ID26=$(curl -s -X POST \
-  http://localhost:4000/channels/mychannel/chaincodes/mycc \
-  -H "authorization: Bearer $ORG1_TOKEN" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"changeBankSecurityTotals",
-	"args":["A07106","005","20190701"]
-}')
-echo "Transacton ID is $TRX_ID26"
+echo "Transacton ID is $TRX_ID16"
 echo
 echo
 
 
-
-
-echo "GET query chaincode on peer1 of Org1"
+echo "readBank BANK002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK002%22%5D" \
@@ -152,7 +119,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readBank BANK004"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK004%22%5D" \
@@ -161,7 +128,16 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readBank BANK005"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK005%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+echo "readBank BANKCBC"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANKCBC%22%5D" \
@@ -170,7 +146,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readAccount 002000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000001%22%5D" \
@@ -179,7 +155,16 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readAccount 002000000002"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000002%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+echo "readAccount 004000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000001%22%5D" \
@@ -188,37 +173,74 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readAccount 004000000002"
 echo
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=querySecurity&args=%5B%22A07103%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000002%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readAccount 005000000001"
 echo
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllBanks&args=%5B%22BANK002%22%2C%22BANK009%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000001%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "readAccount 005000000002"
 echo
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllQueuedTransactions&args=%5B%2220180512%22%2C%2220181231%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000002%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "querySecurity A07106"
 echo
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllHistoryTransactions&args=%5B%22H20180512%22%2C%22H20181231%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=querySecurity&args=%5B%22A07106%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+
+echo "queryAllTransactions"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllTransactions&args=%5B%22BANK002%22%2C%22BANK006%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+echo "queryAllQueuedTransactions"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllQueuedTransactions&args=%5B%2220180611%22%2C%2220181231%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+echo "queryAllHistoryTransactions"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllHistoryTransactions&args=%5B%22H20180611%22%2C%22H20181231%22%5D" \
+  -H "authorization: Bearer $ORG1_TOKEN" \
+  -H "content-type: application/json"
+echo
+echo
+
+echo "get approveflag"
+echo
+curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=get&args=%5B%22approveflag%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
@@ -238,7 +260,7 @@ echo
 
 echo "GET query Transaction by TransactionID"
 echo
-curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID7?peer=peer0.org1.example.com \
+curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID16?peer=peer0.org1.example.com \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
