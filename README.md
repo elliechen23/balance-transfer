@@ -33,6 +33,15 @@ For each of these options, you may choose to run with chaincode written in golan
 
 ##### Terminal Window 1
 
+* Clean the network
+
+```
+docker rm -f $(docker ps -aq)
+docker rmi -f $(docker images | grep dev | awk '{print $3}')
+rm -rf fabric-client-kv-org[1-2]
+docker network prune
+# Press 'y' when prompted by the command
+```
 * Launch the network using docker-compose
 
 ```
@@ -49,7 +58,7 @@ npm install
 * Start the node app on PORT 4000
 
 ```
-PORT=4000 node app
+sudo PORT=4000 node app
 ```
 
 ##### Terminal Window 3
@@ -87,9 +96,12 @@ cd fabric-samples/balance-transfer
 
 ./testAPIs.sh -l golang
 
-## OR use node.js chaincode
+./testAPIs1.sh -l golang
 
-./testAPIs.sh -l node
+./testAPIs2.sh -l golang
+
+./testAPIs3.sh -l golang
+
 ```
 
 
@@ -150,23 +162,8 @@ curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"chaincodeName":"mycc",
-	"chaincodePath":"github.com/example_cc/go",
+	"chaincodePath":"github.com/cgschaincode",
 	"chaincodeType": "golang",
-	"chaincodeVersion":"v0"
-}'
-```
-**NOTE:** *chaincodeType* must be set to **node** when node.js chaincode is used and *chaincodePath* must be set to the location of the node.js chaincode. Also put in the $PWD
-```
-ex:
-curl -s -X POST \
-  http://localhost:4000/chaincodes \
-  -H "authorization: Bearer <put JSON Web Token here>" \
-  -H "content-type: application/json" \
-  -d '{
-	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"chaincodeName":"mycc",
-	"chaincodePath":"$PWD/artifacts/src/github.com/example_cc/node",
-	"chaincodeType": "node",
 	"chaincodeVersion":"v0"
 }'
 ```
@@ -183,7 +180,7 @@ curl -s -X POST \
 	"chaincodeName":"mycc",
 	"chaincodeVersion":"v0",
 	"chaincodeType": "golang",
-	"args":["a","100","b","200"]
+	"args":[""]
 }'
 ```
 **NOTE:** *chaincodeType* must be set to **node** when node.js chaincode is used
@@ -197,8 +194,8 @@ curl -s -X POST \
   -H "content-type: application/json" \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
-	"fcn":"move",
-	"args":["a","b","10"]
+	"fcn":"initBank",
+	"args":["BANK002" , "BANK 002" , "002"]
 }'
 ```
 **NOTE:** Ensure that you save the Transaction ID from the response in order to pass this string in the subsequent query transactions.
@@ -207,7 +204,7 @@ curl -s -X POST \
 
 ```
 curl -s -X GET \
-  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=query&args=%5B%22a%22%5D" \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK002%22%5D" \
   -H "authorization: Bearer <put JSON Web Token here>" \
   -H "content-type: application/json"
 ```
