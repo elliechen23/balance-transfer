@@ -76,7 +76,7 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-echo "1.自行FOP交易：BANK002-A07106-券轉出100000"
+echo "1.自行DVP交易：BANK002-A07106-券轉出100000"
 echo
 TRX_ID1=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -91,7 +91,7 @@ echo "Transacton ID is $TRX_ID1"
 echo
 echo
 
-echo "2.自行FOP交易：BANK002-A07106-券轉入100000"
+echo "2.自行DVP交易：BANK002-A07106-券轉入100000"
 echo
 TRX_ID2=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -106,7 +106,7 @@ echo "Transacton ID is $TRX_ID2"
 echo
 echo
 
-echo "3.自行FOP交易：BANK004-A07106-券轉出100000"
+echo "3.自行DVP交易：BANK004-A07106-券轉出100000"
 echo
 TRX_ID3=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -121,7 +121,7 @@ echo "Transacton ID is $TRX_ID3"
 echo
 echo
 
-echo "4.自行FOP交易：BANK004-A07106-券轉入100000"
+echo "4.自行DVP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID4=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -136,7 +136,7 @@ echo "Transacton ID is $TRX_ID4"
 echo
 echo
 
-echo "5.自行FOP交易：BANK005-A07106-券轉出100000"
+echo "5.自行DVP交易：BANK005-A07106-券轉出100000"
 echo
 TRX_ID5=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -151,7 +151,7 @@ echo "Transacton ID is $TRX_ID5"
 echo
 echo
 
-echo "6.自行FOP交易：BANK005-A07106-券轉入100000"
+echo "6.自行DVP交易：BANK005-A07106-券轉入100000"
 echo
 TRX_ID6=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -166,7 +166,7 @@ echo "Transacton ID is $TRX_ID6"
 echo
 echo
 
-echo "7.跨行FOP交易：BANK002-BANK004-A07106-券轉出100000"
+echo "7.自行FOP交易：BANK002-A07106-券轉出100000"
 echo
 TRX_ID7=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -175,13 +175,13 @@ TRX_ID7=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["S","002000000002" , "004000000001" , "A07106" , "0","100000","true"]
+	"args":["S","002000000002" , "002000000001" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID7"
 echo
 echo
 
-echo "8.跨行FOP交易：BANK004-BANK002-A07106-券轉入100000"
+echo "8.自行FOP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID8=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -190,13 +190,13 @@ TRX_ID8=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["B","004000000001" , "002000000002" , "A07106" , "0","100000","true"]
+	"args":["B","002000000001" , "002000000002" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID8"
 echo
 echo
 
-echo "9.跨行FOP交易：BANK004-BANK005-A07106-券轉出100000"
+echo "9.自行FOP交易：BANK004-A07106-券轉出100000"
 echo
 TRX_ID9=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -205,13 +205,13 @@ TRX_ID9=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["S","004000000002" , "005000000001" , "A07106" , "0","100000","true"]
+	"args":["S","004000000002" , "004000000001" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID9"
 echo
 echo
 
-echo "10.跨行FOP交易：BANK005-BANK004-A07106-券轉入100000"
+echo "10.自行FOP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID10=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -220,13 +220,13 @@ TRX_ID10=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["B","005000000001" , "004000000002" , "A07106" , "0","100000","true"]
+	"args":["B","004000000001" , "004000000002" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID10"
 echo
 echo
 
-echo "11.跨行FOP交易：BANK005-BANK002-A07106-券轉出100000"
+echo "11.自行FOP交易：BANK005-A07106-券轉出100000"
 echo
 TRX_ID11=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -235,13 +235,13 @@ TRX_ID11=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["S","005000000002" , "002000000001" , "A07106" , "0","100000","true"]
+	"args":["S","005000000002" , "005000000001" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID11"
 echo
 echo
 
-echo "12.跨行FOP交易：BANK002-BANK005-A07106-券轉入100000"
+echo "12.自行FOP交易：BANK005-A07106-券轉入100000"
 echo
 TRX_ID12=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -250,7 +250,7 @@ TRX_ID12=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["B","002000000001" , "005000000002" , "A07106" , "0","100000","true"]
+	"args":["B","005000000001" , "005000000002" , "A07106" , "0","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID12"
 echo
