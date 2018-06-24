@@ -1,0 +1,178 @@
+POST request Enroll on Org1  ...
+
+{"success":true,"secret":"","message":"Jim enrolled Successfully","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mjk4ODAzMDIsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1Mjk4NDQzMDJ9.niIWHT2SSbk0eU21rlxIyD7G1TEDmFGbpS8xKx5Kuj4"}
+
+ORG1 token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mjk4ODAzMDIsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1Mjk4NDQzMDJ9.niIWHT2SSbk0eU21rlxIyD7G1TEDmFGbpS8xKx5Kuj4
+
+POST request Enroll on Org2 ...
+
+{"success":true,"secret":"","message":"Barry enrolled Successfully","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mjk4ODAzMDIsInVzZXJuYW1lIjoiQmFycnkiLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTUyOTg0NDMwMn0.GpMqJ1wBfdJEDg2JJ5K03PqwpduSgZAHPtQcSAUZxvA"}
+
+ORG2 token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1Mjk4ODAzMDIsInVzZXJuYW1lIjoiQmFycnkiLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTUyOTg0NDMwMn0.GpMqJ1wBfdJEDg2JJ5K03PqwpduSgZAHPtQcSAUZxvA
+
+
+initBank BANK002
+
+Transacton ID is 070d2c187709332589d5d2c355ed53b3e7daa89ffb900e03b0ab309d6ac6e379
+
+
+initBank BANK004
+
+Transacton ID is 7880e0353d98ef02b5895c5f177345eabfb24fff4bdbbc69da74da24320df818
+
+
+initBank BANK005
+
+Transacton ID is de54d3db529c161986ae5e381e7dbe5ea3888b9fbcff82c4d36d26b45fef5b7d
+
+
+initAccount 002000000001
+
+Transacton ID is ff7af7d2104debd205f04b296fc05778735b8d203119a081e03bdbba08969804
+
+
+initAccount 002000000002
+
+Transacton ID is 832316a6f4894ef1879dc3d16de69be7445b64314672ac4338a3556668c41c45
+
+
+initAccount 004000000001
+
+Transacton ID is 1428280b2d554eb99fbfc9faabf58e26d3b2883cd76972c7c5bc011db3ac0802
+
+
+initAccount 004000000002
+
+Transacton ID is 6bcdf561bbd99ac54c4a3b50191f399b218a585daf57473a5d8f59641df459ab
+
+
+initAccount 005000000001
+
+Transacton ID is f00078e2be04dcaebb3acc81e037840252dea87c6b63e4a8d20e93cef835aac4
+
+
+initAccount 005000000002
+
+Transacton ID is 1f5633474ba2008b05e8ef54fb3946094d82c43f644b70c656467783ed88ea9c
+
+
+createSecurity A07106
+
+Transacton ID is 470240d6775c0f9f732c29baf366b3ad320574b15fb2d860443cfa6a721c1360
+
+
+changeSecurity 002000000001
+
+Transacton ID is 414b17ec96dc2f473098e12d25099fd4a0c3735b4a7ca6a7f11fa88fcb5e571e
+
+
+changeSecurity 002000000002
+
+Transacton ID is 097a72da207152c3c501df2c0674a5c94d0ca728ad1c4d3c5332dbbf2bbd434c
+
+
+changeSecurity 004000000001
+
+Transacton ID is addc547758ecf19438c1b1a857f397ff45bef11d41e59a76cb8b8c6aed9560dc
+
+
+changeSecurity 004000000002
+
+Transacton ID is db35477ac9355122ca1548f91f1585fcef8b88ae20852fa14435b6367cc41af1
+
+
+changeSecurity 005000000001
+
+Transacton ID is 39f9b81cc8a5efcbaae38e0af396dbd591ffe9cb3eb085f681fa483a1647b66e
+
+
+changeSecurity 005000000002
+
+Transacton ID is 73d95679463a246c08df867169472d55322f9c1c8240eefb7aaa38c265224067
+
+
+readBank BANK002
+
+{"docType":"Bank","BankID":"BANK002","BankName":"BANK 002","BankCode":"002","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:09","UpdateTime":"2018/06/24 12:45:12"}],"BankAccounts":["002000000001","002000000002"]}
+
+readBank BANK004
+
+{"docType":"Bank","BankID":"BANK004","BankName":"BANK 004","BankCode":"004","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:14","UpdateTime":"2018/06/24 12:45:17"}],"BankAccounts":["004000000001","004000000002"]}
+
+readBank BANK005
+
+{"docType":"Bank","BankID":"BANK005","BankName":"BANK 005","BankCode":"005","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:19","UpdateTime":"2018/06/24 12:45:22"}],"BankAccounts":["005000000001","005000000002"]}
+
+readBank BANKCBC
+
+{"docType":"Bank","BankID":"BANKCBC","BankName":"BANK CBC","BankCode":"CBC","BankTotals":null,"BankAccounts":null}
+
+readAccount 002000000001
+
+{"docType":"account","AccountID":"002000000001","BankID":"002","BankName":"BANK002","CustName":"CUST001","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+readAccount 002000000002
+
+{"docType":"account","AccountID":"002000000002","BankID":"002","BankName":"BANK002","CustName":"CUST002","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+readAccount 004000000001
+
+{"docType":"account","AccountID":"004000000001","BankID":"004","BankName":"BANK004","CustName":"CUST003","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+readAccount 004000000002
+
+{"docType":"account","AccountID":"004000000002","BankID":"004","BankName":"BANK004","CustName":"CUST004","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+readAccount 005000000001
+
+{"docType":"account","AccountID":"005000000001","BankID":"005","BankName":"BANK005","CustName":"CUST005","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+readAccount 005000000002
+
+{"docType":"account","AccountID":"005000000002","BankID":"005","BankName":"BANK005","CustName":"CUST006","CustType":"00001","Status":"0","Assets":[{"SecurityID":"A07106","SecurityAmount":10000000,"Balance":10000000,"Position":10000000,"TotalPayment":0,"PendingBalance":10000000}]}
+
+querySecurity A07106
+
+{"docType":"security","SecurityID":"A07106","SecurityName":"107A06","IssueDate":"2018/06/02","MaturityDate":"2028/06/02","InterestRate":1,"RepayPeriod":10,"TotalAmount":25000000000,"Balance":24940000000,"SecurityStatus":0,"Owners":[{"OwnedAccountID":"002000000001","OwnedBankID":"002","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0},{"OwnedAccountID":"002000000002","OwnedBankID":"002","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0},{"OwnedAccountID":"004000000001","OwnedBankID":"004","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0},{"OwnedAccountID":"004000000002","OwnedBankID":"004","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0},{"OwnedAccountID":"005000000001","OwnedBankID":"005","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0},{"OwnedAccountID":"005000000002","OwnedBankID":"005","OwnedAmount":10000000,"OwnedBalance":10000000,"OwnedRepay":10100000,"OwnedInterest":100000,"OwnedDurationInterest":10000,"OwnedPaidDurationInterest":0,"OwnedDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"],"Avaliable":0}],"SecurityTotals":[{"BankID":"002","TotalBalance":20000000,"TotalAmount":20000000,"TotalInterest":200000,"DurationInterest":20000,"PaidDurationInterest":0,"CreateTime":"2018/06/24 12:45:26","UpdateTime":"2018/06/24 12:45:29"},{"BankID":"004","TotalBalance":20000000,"TotalAmount":20000000,"TotalInterest":200000,"DurationInterest":20000,"PaidDurationInterest":0,"CreateTime":"2018/06/24 12:45:31","UpdateTime":"2018/06/24 12:45:34"},{"BankID":"005","TotalBalance":20000000,"TotalAmount":20000000,"TotalInterest":200000,"DurationInterest":20000,"PaidDurationInterest":0,"CreateTime":"2018/06/24 12:45:36","UpdateTime":"2018/06/24 12:45:39"}],"SecurityDurationDate":["2019/06/02","2020/06/02","2021/06/02","2022/06/02","2023/06/02","2024/06/02","2025/06/02","2026/06/02","2027/06/02","2028/06/02"]}
+
+GET query chaincode on peer1 of Org1
+
+[{"Key":"BANK002", "Record":{"docType":"Bank","BankID":"BANK002","BankName":"BANK 002","BankCode":"002","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:09","UpdateTime":"2018/06/24 12:45:12"}],"BankAccounts":["002000000001","002000000002"]}},{"Key":"BANK004", "Record":{"docType":"Bank","BankID":"BANK004","BankName":"BANK 004","BankCode":"004","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:14","UpdateTime":"2018/06/24 12:45:17"}],"BankAccounts":["004000000001","004000000002"]}},{"Key":"BANK005", "Record":{"docType":"Bank","BankID":"BANK005","BankName":"BANK 005","BankCode":"005","BankTotals":[{"SecurityID":"A07106","TotalBalance":20000000,"TotalAmount":20000000,"CreateTime":"2018/06/24 12:45:19","UpdateTime":"2018/06/24 12:45:22"}],"BankAccounts":["005000000001","005000000002"]}}]
+
+GET query chaincode on peer1 of Org1
+
+[]
+
+GET query chaincode on peer1 of Org1
+
+[]
+
+GET query chaincode on peer1 of Org1
+
+"0"
+
+GET query Block by blockNumber
+
+{"header":{"number":"1","previous_hash":"e6e61f301737baac467bc241d312eb12376934a1168bc2bfff22ba65a0f0494e","data_hash":"eac86aec6349470130e6de6a219f4481b187fd4a5d85d89eb9be3b7af578243f"},"data":{"data":[{"signature":{"type":"Buffer","data":[48,69,2,33,0,202,193,210,97,131,48,143,83,148,34,176,184,48,141,92,175,131,76,4,44,71,42,190,209,56,210,78,60,155,175,96,3,2,32,9,24,240,131,22,252,58,44,186,102,254,97,33,129,166,185,167,130,252,141,192,66,39,170,251,161,79,240,20,242,83,183]},"payload":{"header":{"channel_header":{"type":3,"version":1,"timestamp":"Sun Jun 24 2018 20:43:39 GMT+0800 (CST)","channel_id":"mychannel","tx_id":"e2a5db459e6c66041e3c70c352e9e6e37e90e3c995bbfba7695281ea6ad80bcc","epoch":"0","extension":{"type":"Buffer","data":[18,6,18,4,108,115,99,99]},"typeString":"ENDORSER_TRANSACTION"},"signature_header":{"creator":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGTCCAb+gAwIBAgIQKKKdQSzsDoUYn/LPAuRWGTAKBggqhkjOPQQDAjBzMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu\nb3JnMS5leGFtcGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTla\nMFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMR8wHQYDVQQDDBZBZG1pbkBvcmcxLmV4YW1wbGUuY29tMFkw\nEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAECmbzUDozIrLKjp3OAzItSG7m7Flw76rT\n8VO8E6otlCwxKtBRkPpZL7norC3NsjyE339J5O4pXCqhIApQyRRsRqNNMEswDgYD\nVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDnKSJOiz8xeE\nyKk8W4729MHJHZ5uV3xFwzFjYJ/kABEwCgYIKoZIzj0EAwIDSAAwRQIhALT02pc/\nyfE/4wUJfUBQ32GifUEh8JktAXzL/73S0rjYAiACNSp6zAQBX9SBxTOGMk4cGGAy\nCKqf8052NVUs2CvPzA==\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[178,196,205,103,179,36,161,255,104,130,148,48,113,57,18,12,242,53,191,214,133,69,180,6]}}},"data":{"actions":[{"header":{"creator":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGTCCAb+gAwIBAgIQKKKdQSzsDoUYn/LPAuRWGTAKBggqhkjOPQQDAjBzMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu\nb3JnMS5leGFtcGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTla\nMFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMR8wHQYDVQQDDBZBZG1pbkBvcmcxLmV4YW1wbGUuY29tMFkw\nEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAECmbzUDozIrLKjp3OAzItSG7m7Flw76rT\n8VO8E6otlCwxKtBRkPpZL7norC3NsjyE339J5O4pXCqhIApQyRRsRqNNMEswDgYD\nVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDnKSJOiz8xeE\nyKk8W4729MHJHZ5uV3xFwzFjYJ/kABEwCgYIKoZIzj0EAwIDSAAwRQIhALT02pc/\nyfE/4wUJfUBQ32GifUEh8JktAXzL/73S0rjYAiACNSp6zAQBX9SBxTOGMk4cGGAy\nCKqf8052NVUs2CvPzA==\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[178,196,205,103,179,36,161,255,104,130,148,48,113,57,18,12,242,53,191,214,133,69,180,6]}},"payload":{"chaincode_proposal_payload":{"input":{"type":"Buffer","data":[10,61,8,1,18,6,18,4,108,115,99,99,26,49,10,6,100,101,112,108,111,121,10,9,109,121,99,104,97,110,110,101,108,10,28,10,26,8,1,18,10,18,4,109,121,99,99,26,2,118,48,26,10,10,6,103,111,108,97,110,103,10,0]}},"action":{"proposal_response_payload":{"proposal_hash":"c97053632d7da0617ba3de941e2abda86d8062fcb396475b05b664da2879a2e9","extension":{"results":{"data_model":0,"ns_rwset":[{"namespace":"lscc","rwset":{"reads":[{"key":"mycc","version":null}],"range_queries_info":[],"writes":[{"key":"mycc","is_delete":false,"value":"\n\u0004mycc\u0012\u0002v0\u001a\u0004escc\"\u0004vscc*(\u0012\f\u0012\n\b\u0001\u0012\u0002\b\u0000\u0012\u0002\b\u0001\u001a\u000b\u0012\t\n\u0007Org1MSP\u001a\u000b\u0012\t\n\u0007Org2MSP2D\n RE-\ryNj�\f��\t���4�\u001e�9?���k��żv%�\u0012 *PI�w�\u000fjL5x6^�E=�)ˡF��\t\u0019\u0015��C5\u00115: �)�\u0007s[��\u00121o�h\u0019\fB\u0000��4U\u0012\u0001)��O6�v>B,\u0012\f\u0012\n\b\u0001\u0012\u0002\b\u0000\u0012\u0002\b\u0001\u001a\r\u0012\u000b\n\u0007Org1MSP\u0010\u0001\u001a\r\u0012\u000b\n\u0007Org2MSP\u0010\u0001"}]}}]},"events":{"chaincode_id":"","tx_id":"","event_name":"","payload":{"type":"Buffer","data":[]}},"response":{"status":200,"message":"","payload":"\n\u0004mycc\u0012\u0002v0\u001a\u0004escc\"\u0004vscc*(\u0012\f\u0012\n\b\u0001\u0012\u0002\b\u0000\u0012\u0002\b\u0001\u001a\u000b\u0012\t\n\u0007Org1MSP\u001a\u000b\u0012\t\n\u0007Org2MSP2D\n RE-\ryNj�\f��\t���4�\u001e�9?���k��żv%�\u0012 *PI�w�\u000fjL5x6^�E=�)ˡF��\t\u0019\u0015��C5\u00115: �)�\u0007s[��\u00121o�h\u0019\fB\u0000��4U\u0012\u0001)��O6�v>B,\u0012\f\u0012\n\b\u0001\u0012\u0002\b\u0000\u0012\u0002\b\u0001\u001a\r\u0012\u000b\n\u0007Org1MSP\u0010\u0001\u001a\r\u0012\u000b\n\u0007Org2MSP\u0010\u0001"},"chaincode_id":{"path":"","name":"lscc","version":"1.1.0"}}},"endorsements":[{"endorser":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGDCCAb+gAwIBAgIQPcMFFEB/vq6mEL6vXV7aUTAKBggqhkjOPQQDAjBzMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu\nb3JnMS5leGFtcGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTla\nMFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMR8wHQYDVQQDExZwZWVyMC5vcmcxLmV4YW1wbGUuY29tMFkw\nEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzS9k2gCKHcat8Wj4T2nB1uyC8R2zg3um\nxdTL7nmgFWp0uyCCbQQxD/VS+8R/3DNvEFkvzhcjc9NU/nRqMirpLqNNMEswDgYD\nVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDnKSJOiz8xeE\nyKk8W4729MHJHZ5uV3xFwzFjYJ/kABEwCgYIKoZIzj0EAwIDRwAwRAIgHBdxbHUG\nrFUzKPX9UmmN3SwigWcRUREUy/GTb3hDIAsCIEF1BxTqv8ilQYE8ql0wJL4mTber\nHE6DFYvvBCUnicUh\n-----END CERTIFICATE-----\n"},"signature":{"type":"Buffer","data":[48,69,2,33,0,191,53,239,25,29,72,233,139,70,38,19,254,6,39,167,245,253,62,55,41,61,88,185,124,205,59,180,75,9,137,175,215,2,32,121,145,66,251,151,43,248,177,205,250,74,51,165,182,39,154,219,38,84,90,38,79,116,196,39,37,146,129,164,200,124,227]}},{"endorser":{"Mspid":"Org2MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGjCCAcCgAwIBAgIRANDlqX1daKI2aN0Qm7vrfKAwCgYIKoZIzj0EAwIwczEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xGTAXBgNVBAoTEG9yZzIuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\nLm9yZzIuZXhhbXBsZS5jb20wHhcNMTcwNjIzMTIzMzE5WhcNMjcwNjIxMTIzMzE5\nWjBbMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN\nU2FuIEZyYW5jaXNjbzEfMB0GA1UEAxMWcGVlcjAub3JnMi5leGFtcGxlLmNvbTBZ\nMBMGByqGSM49AgEGCCqGSM49AwEHA0IABP8N39LBcB0qJyb3v9Y9WIPfYHOfWPna\nT8WyWzGisrYvHVF+GLfDLFrjQs0uN8QPsTsqYlnXDs/Mjv7tZaE9NuqjTTBLMA4G\nA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIKfUfvpGproH\ncwyFD+0sE3XfJzYNcif0jNwvgOUFZ4AFMAoGCCqGSM49BAMCA0gAMEUCIQDa1gKe\nPRVRN/i8hUptACw02V7V9Yeo7kKlbQ6vWU5fqAIgXg2xAQ4TjwXOHlKbIyYZ7fox\ncekBJ+E8yAFm8XQrfy0=\n-----END CERTIFICATE-----\n"},"signature":{"type":"Buffer","data":[48,68,2,32,126,204,225,187,69,135,29,107,224,0,153,180,156,98,123,213,114,7,211,175,118,123,84,33,185,155,55,108,151,187,183,220,2,32,30,157,57,70,148,84,147,129,50,241,139,191,205,6,183,4,102,151,146,207,52,255,131,45,184,118,11,234,101,9,195,55]}}]}}}]}}}]},"metadata":{"metadata":[{"value":"","signatures":[{"signature_header":{"creator":{"Mspid":"OrdererMSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICDTCCAbOgAwIBAgIRALFafJiTFN/47AvAGfvj1ZEwCgYIKoZIzj0EAwIwaTEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt\ncGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTlaMFgxCzAJBgNV\nBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp\nc2NvMRwwGgYDVQQDExNvcmRlcmVyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYI\nKoZIzj0DAQcDQgAEYtguLKFBLLc0VSwyPHHHNe76HH71oOXK6wun8Y/5vtMawPZ/\nWTm/vBVUWdfNlzc9eA28aXx6zBAB8iRm16EeU6NNMEswDgYDVR0PAQH/BAQDAgeA\nMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDUbM8OlDbBvDtuK/gM2yAsSUNgT5\nXHLuD/g50+wwBxkwCgYIKoZIzj0EAwIDSAAwRQIhANJuEGHBftrtlWgie9zgc60J\n/XVytPN/D0rPlkMV17n7AiBBbStggGBfFYcQ2LhDhcKut8nScJ2OFrt+dJSdJbod\n7A==\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[80,124,59,230,77,179,27,201,172,213,156,172,247,243,214,146,160,102,219,54,161,252,185,23]}},"signature":{"type":"Buffer","data":[48,69,2,33,0,248,221,176,12,155,143,32,137,158,117,23,162,219,164,79,132,107,82,251,6,83,114,138,45,33,72,153,243,57,6,54,217,2,32,55,183,1,205,248,98,110,108,232,115,66,122,172,149,189,222,164,25,34,247,249,245,232,186,122,35,245,120,190,26,170,37]}}]},{"value":{"index":"0"},"signatures":[{"signature_header":{"creator":{"Mspid":"OrdererMSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICDTCCAbOgAwIBAgIRALFafJiTFN/47AvAGfvj1ZEwCgYIKoZIzj0EAwIwaTEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRcwFQYDVQQDEw5jYS5leGFt\ncGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTlaMFgxCzAJBgNV\nBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNp\nc2NvMRwwGgYDVQQDExNvcmRlcmVyLmV4YW1wbGUuY29tMFkwEwYHKoZIzj0CAQYI\nKoZIzj0DAQcDQgAEYtguLKFBLLc0VSwyPHHHNe76HH71oOXK6wun8Y/5vtMawPZ/\nWTm/vBVUWdfNlzc9eA28aXx6zBAB8iRm16EeU6NNMEswDgYDVR0PAQH/BAQDAgeA\nMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDUbM8OlDbBvDtuK/gM2yAsSUNgT5\nXHLuD/g50+wwBxkwCgYIKoZIzj0EAwIDSAAwRQIhANJuEGHBftrtlWgie9zgc60J\n/XVytPN/D0rPlkMV17n7AiBBbStggGBfFYcQ2LhDhcKut8nScJ2OFrt+dJSdJbod\n7A==\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[88,214,108,184,117,133,90,164,45,158,117,254,153,26,37,109,232,235,90,76,155,216,237,136]}},"signature":{"type":"Buffer","data":[48,69,2,33,0,228,204,72,7,192,38,128,105,121,135,121,27,217,233,85,99,188,91,14,163,90,197,119,207,195,208,153,147,198,128,254,213,2,32,71,26,65,85,130,255,76,169,11,158,29,64,6,202,12,225,197,144,172,71,92,165,212,1,169,107,195,82,116,53,120,219]}}]},[0]]}}
+
+GET query Transaction by TransactionID
+
+{"validationCode":0,"transactionEnvelope":{"signature":{"type":"Buffer","data":[48,69,2,33,0,234,194,12,224,82,136,65,192,160,182,4,54,131,0,77,134,48,196,188,53,61,59,200,163,143,69,69,6,252,178,163,20,2,32,65,185,248,166,148,234,122,44,39,223,128,142,79,219,105,215,197,143,161,214,247,214,113,250,96,138,189,188,74,50,20,158]},"payload":{"header":{"channel_header":{"type":3,"version":1,"timestamp":"Sun Jun 24 2018 20:45:39 GMT+0800 (CST)","channel_id":"mychannel","tx_id":"73d95679463a246c08df867169472d55322f9c1c8240eefb7aaa38c265224067","epoch":"0","extension":{"type":"Buffer","data":[18,6,18,4,109,121,99,99]},"typeString":"ENDORSER_TRANSACTION"},"signature_header":{"creator":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICijCCAjGgAwIBAgIUGAuOXaL2u1g7OPD0AwylAXIdYQYwCgYIKoZIzj0EAwIw\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTgwNjI0MTIzODAwWhcNMTkwNjI0MTI0\nMzAwWjBAMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\nYXJ0bWVudDExDDAKBgNVBAMTA0ppbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA\nBPcPwcyHOIZlfxw1e4vqKRFMj/nDLH1E6a6WKu85wPQ0HA4BiXrf32rQ9eaTJNEr\nTbJ6N4Elc6j3t8LYS4mFanGjgdUwgdIwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB\n/wQCMAAwHQYDVR0OBBYEFBBbxzBbCSp0nYwnsaO4TmocLjdKMCsGA1UdIwQkMCKA\nIA5ykiTos/MXhMipPFuO9vTByR2ebld8RcMxY2Cf5AARMGYGCCoDBAUGBwgBBFp7\nImF0dHJzIjp7ImhmLkFmZmlsaWF0aW9uIjoib3JnMS5kZXBhcnRtZW50MSIsImhm\nLkVucm9sbG1lbnRJRCI6IkppbSIsImhmLlR5cGUiOiJjbGllbnQifX0wCgYIKoZI\nzj0EAwIDRwAwRAIgc8HcDe5Ju7MWadLhtVC7lbOjEnD4ag1hvV8ZhP12AiQCIDmp\n6pc1fy76Z+0ZbsrdswpQ0egjyBN4xRIwbGuH2aLC\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[203,214,13,217,216,62,23,56,85,118,1,3,157,96,93,112,36,220,145,213,159,120,119,34]}}},"data":{"actions":[{"header":{"creator":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICijCCAjGgAwIBAgIUGAuOXaL2u1g7OPD0AwylAXIdYQYwCgYIKoZIzj0EAwIw\nczELMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNh\nbiBGcmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMT\nE2NhLm9yZzEuZXhhbXBsZS5jb20wHhcNMTgwNjI0MTIzODAwWhcNMTkwNjI0MTI0\nMzAwWjBAMTAwDQYDVQQLEwZjbGllbnQwCwYDVQQLEwRvcmcxMBIGA1UECxMLZGVw\nYXJ0bWVudDExDDAKBgNVBAMTA0ppbTBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IA\nBPcPwcyHOIZlfxw1e4vqKRFMj/nDLH1E6a6WKu85wPQ0HA4BiXrf32rQ9eaTJNEr\nTbJ6N4Elc6j3t8LYS4mFanGjgdUwgdIwDgYDVR0PAQH/BAQDAgeAMAwGA1UdEwEB\n/wQCMAAwHQYDVR0OBBYEFBBbxzBbCSp0nYwnsaO4TmocLjdKMCsGA1UdIwQkMCKA\nIA5ykiTos/MXhMipPFuO9vTByR2ebld8RcMxY2Cf5AARMGYGCCoDBAUGBwgBBFp7\nImF0dHJzIjp7ImhmLkFmZmlsaWF0aW9uIjoib3JnMS5kZXBhcnRtZW50MSIsImhm\nLkVucm9sbG1lbnRJRCI6IkppbSIsImhmLlR5cGUiOiJjbGllbnQifX0wCgYIKoZI\nzj0EAwIDRwAwRAIgc8HcDe5Ju7MWadLhtVC7lbOjEnD4ag1hvV8ZhP12AiQCIDmp\n6pc1fy76Z+0ZbsrdswpQ0egjyBN4xRIwbGuH2aLC\n-----END CERTIFICATE-----\n"},"nonce":{"type":"Buffer","data":[203,214,13,217,216,62,23,56,85,118,1,3,157,96,93,112,36,220,145,213,159,120,119,34]}},"payload":{"chaincode_proposal_payload":{"input":{"type":"Buffer","data":[10,130,1,8,1,18,6,18,4,109,121,99,99,26,118,10,14,99,104,97,110,103,101,83,101,99,117,114,105,116,121,10,6,65,48,55,49,48,54,10,6,49,48,55,65,48,54,10,10,50,48,49,56,47,48,54,47,48,50,10,10,50,48,50,56,47,48,54,47,48,50,10,1,49,10,2,49,48,10,11,50,53,48,48,48,48,48,48,48,48,48,10,12,48,48,53,48,48,48,48,48,48,48,48,50,10,3,48,48,53,10,8,49,48,48,48,48,48,48,48,10,8,49,48,48,48,48,48,48,48,10,1,48]}},"action":{"proposal_response_payload":{"proposal_hash":"224699c7df6f8d9e93ba6f811b35d5cb2201e0f935cdc682bc110d8fc79880c5","extension":{"results":{"data_model":0,"ns_rwset":[{"namespace":"lscc","rwset":{"reads":[{"key":"mycc","version":{"block_num":"1","tx_num":"0"}}],"range_queries_info":[],"writes":[]}},{"namespace":"mycc","rwset":{"reads":[{"key":"A07106","version":{"block_num":"18","tx_num":"0"}}],"range_queries_info":[],"writes":[{"key":"A07106","is_delete":false,"value":"{\"docType\":\"security\",\"SecurityID\":\"A07106\",\"SecurityName\":\"107A06\",\"IssueDate\":\"2018/06/02\",\"MaturityDate\":\"2028/06/02\",\"InterestRate\":1,\"RepayPeriod\":10,\"TotalAmount\":25000000000,\"Balance\":24940000000,\"SecurityStatus\":0,\"Owners\":[{\"OwnedAccountID\":\"002000000001\",\"OwnedBankID\":\"002\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0},{\"OwnedAccountID\":\"002000000002\",\"OwnedBankID\":\"002\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0},{\"OwnedAccountID\":\"004000000001\",\"OwnedBankID\":\"004\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0},{\"OwnedAccountID\":\"004000000002\",\"OwnedBankID\":\"004\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0},{\"OwnedAccountID\":\"005000000001\",\"OwnedBankID\":\"005\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0},{\"OwnedAccountID\":\"005000000002\",\"OwnedBankID\":\"005\",\"OwnedAmount\":10000000,\"OwnedBalance\":10000000,\"OwnedRepay\":10100000,\"OwnedInterest\":100000,\"OwnedDurationInterest\":10000,\"OwnedPaidDurationInterest\":0,\"OwnedDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"],\"Avaliable\":0}],\"SecurityTotals\":[{\"BankID\":\"002\",\"TotalBalance\":20000000,\"TotalAmount\":20000000,\"TotalInterest\":200000,\"DurationInterest\":20000,\"PaidDurationInterest\":0,\"CreateTime\":\"2018/06/24 12:45:26\",\"UpdateTime\":\"2018/06/24 12:45:29\"},{\"BankID\":\"004\",\"TotalBalance\":20000000,\"TotalAmount\":20000000,\"TotalInterest\":200000,\"DurationInterest\":20000,\"PaidDurationInterest\":0,\"CreateTime\":\"2018/06/24 12:45:31\",\"UpdateTime\":\"2018/06/24 12:45:34\"},{\"BankID\":\"005\",\"TotalBalance\":20000000,\"TotalAmount\":20000000,\"TotalInterest\":200000,\"DurationInterest\":20000,\"PaidDurationInterest\":0,\"CreateTime\":\"2018/06/24 12:45:36\",\"UpdateTime\":\"2018/06/24 12:45:39\"}],\"SecurityDurationDate\":[\"2019/06/02\",\"2020/06/02\",\"2021/06/02\",\"2022/06/02\",\"2023/06/02\",\"2024/06/02\",\"2025/06/02\",\"2026/06/02\",\"2027/06/02\",\"2028/06/02\"]}"}]}}]},"events":{"chaincode_id":"","tx_id":"","event_name":"","payload":{"type":"Buffer","data":[]}},"response":{"status":200,"message":"","payload":""},"chaincode_id":{"path":"","name":"mycc","version":"v0"}}},"endorsements":[{"endorser":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGDCCAb+gAwIBAgIQPcMFFEB/vq6mEL6vXV7aUTAKBggqhkjOPQQDAjBzMQsw\nCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMNU2FuIEZy\nYW5jaXNjbzEZMBcGA1UEChMQb3JnMS5leGFtcGxlLmNvbTEcMBoGA1UEAxMTY2Eu\nb3JnMS5leGFtcGxlLmNvbTAeFw0xNzA2MjMxMjMzMTlaFw0yNzA2MjExMjMzMTla\nMFsxCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1T\nYW4gRnJhbmNpc2NvMR8wHQYDVQQDExZwZWVyMC5vcmcxLmV4YW1wbGUuY29tMFkw\nEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEzS9k2gCKHcat8Wj4T2nB1uyC8R2zg3um\nxdTL7nmgFWp0uyCCbQQxD/VS+8R/3DNvEFkvzhcjc9NU/nRqMirpLqNNMEswDgYD\nVR0PAQH/BAQDAgeAMAwGA1UdEwEB/wQCMAAwKwYDVR0jBCQwIoAgDnKSJOiz8xeE\nyKk8W4729MHJHZ5uV3xFwzFjYJ/kABEwCgYIKoZIzj0EAwIDRwAwRAIgHBdxbHUG\nrFUzKPX9UmmN3SwigWcRUREUy/GTb3hDIAsCIEF1BxTqv8ilQYE8ql0wJL4mTber\nHE6DFYvvBCUnicUh\n-----END CERTIFICATE-----\n"},"signature":{"type":"Buffer","data":[48,69,2,33,0,219,18,136,17,232,174,56,50,219,182,102,220,161,165,73,77,151,102,173,120,147,211,1,40,238,94,65,105,203,131,76,100,2,32,95,185,81,198,79,229,222,27,237,209,234,82,219,154,144,70,210,228,97,248,120,235,66,134,134,18,219,163,139,103,25,243]}},{"endorser":{"Mspid":"Org1MSP","IdBytes":"-----BEGIN CERTIFICATE-----\nMIICGjCCAcCgAwIBAgIRAI+BBtEBvpOqhfRZZH7eV/YwCgYIKoZIzj0EAwIwczEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xGTAXBgNVBAoTEG9yZzEuZXhhbXBsZS5jb20xHDAaBgNVBAMTE2Nh\nLm9yZzEuZXhhbXBsZS5jb20wHhcNMTcwNjIzMTIzMzE5WhcNMjcwNjIxMTIzMzE5\nWjBbMQswCQYDVQQGEwJVUzETMBEGA1UECBMKQ2FsaWZvcm5pYTEWMBQGA1UEBxMN\nU2FuIEZyYW5jaXNjbzEfMB0GA1UEAxMWcGVlcjEub3JnMS5leGFtcGxlLmNvbTBZ\nMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCnT04ltvjsgiZVuCGLsRYzEiCTJZlZw\nh3HT/273B3NkWA7wrlyK7FfAanIyexuR1UI9m4+YKNqFG6cgYnf8MsejTTBLMA4G\nA1UdDwEB/wQEAwIHgDAMBgNVHRMBAf8EAjAAMCsGA1UdIwQkMCKAIA5ykiTos/MX\nhMipPFuO9vTByR2ebld8RcMxY2Cf5AARMAoGCCqGSM49BAMCA0gAMEUCIQCSRdWm\ni4IgVUajvzWVxyE/wi7n617pVqS4+nJ7gbTRjQIgefzBwS+bkNhPc3/rktySFLRC\nWMnq87KyqMLc6iRaJx0=\n-----END CERTIFICATE-----\n"},"signature":{"type":"Buffer","data":[48,68,2,32,99,240,190,72,8,64,87,168,216,12,206,208,75,93,209,82,171,22,245,59,15,66,52,87,66,46,142,73,33,155,225,174,2,32,106,27,188,24,250,178,115,28,177,32,153,219,69,118,239,137,8,163,56,97,14,126,11,235,203,238,49,79,140,213,52,254]}}]}}}]}}}}
+
+GET query ChainInfo
+
+{"height":{"low":20,"high":0,"unsigned":true},"currentBlockHash":{"buffer":{"type":"Buffer","data":[8,20,18,32,72,240,208,137,253,240,211,231,138,25,178,240,214,43,92,94,249,27,174,249,131,204,148,169,103,252,79,90,211,39,207,187,26,32,200,205,6,233,204,0,229,53,39,162,134,200,242,10,22,228,111,77,45,88,23,104,213,130,229,231,186,43,149,206,15,89]},"offset":4,"markedOffset":-1,"limit":36,"littleEndian":true,"noAssert":false},"previousBlockHash":{"buffer":{"type":"Buffer","data":[8,20,18,32,72,240,208,137,253,240,211,231,138,25,178,240,214,43,92,94,249,27,174,249,131,204,148,169,103,252,79,90,211,39,207,187,26,32,200,205,6,233,204,0,229,53,39,162,134,200,242,10,22,228,111,77,45,88,23,104,213,130,229,231,186,43,149,206,15,89]},"offset":38,"markedOffset":-1,"limit":70,"littleEndian":true,"noAssert":false}}
+
+GET query Installed chaincodes
+
+["name: mycc, version: v0, path: github.com/cgschaincode"]
+
+GET query Instantiated chaincodes
+
+["name: mycc, version: v0, path: github.com/cgschaincode"]
+
+GET query Channels
+
+{"channels":[{"channel_id":"mychannel"}]}
+
+Total execution time : 42 secs ...
