@@ -52,7 +52,7 @@ function setChaincodePath(){
 
 setChaincodePath
 
-echo "POST request Enroll on Org1  ..."
+echo "1.POST request Enroll on Org1  ..."
 echo
 ORG1_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -63,7 +63,7 @@ ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 echo
 echo "ORG1 token is $ORG1_TOKEN"
 echo
-echo "POST request Enroll on Org2 ..."
+echo "2.POST request Enroll on Org2 ..."
 echo
 ORG2_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -76,7 +76,7 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-echo "initBank BANK002"
+echo "3.initBank BANK002"
 echo
 TRX_ID1=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -91,7 +91,7 @@ echo "Transacton ID is $TRX_ID1"
 echo
 echo
 
-echo "initBank BANK004"
+echo "4.initBank BANK004"
 echo
 TRX_ID2=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -106,7 +106,7 @@ echo "Transacton ID is $TRX_ID2"
 echo
 echo
 
-echo "initBank BANK005"
+echo "5.initBank BANK005"
 echo
 TRX_ID3=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -122,7 +122,7 @@ echo
 echo
 
 
-echo "initAccount 002000000001"
+echo "6.initAccount 002000000001"
 echo
 TRX_ID4=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -137,7 +137,7 @@ echo "Transacton ID is $TRX_ID4"
 echo
 echo
 
-echo "initAccount 002000000002"
+echo "7.initAccount 002000000002"
 echo
 TRX_ID5=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -153,7 +153,7 @@ echo
 echo
 
 
-echo "initAccount 004000000001"
+echo "8.initAccount 004000000001"
 echo
 TRX_ID6=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -169,7 +169,7 @@ echo
 echo
 
 
-echo "initAccount 004000000002"
+echo "9.initAccount 004000000002"
 echo
 TRX_ID7=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -184,7 +184,7 @@ echo "Transacton ID is $TRX_ID7"
 echo
 echo
 
-echo "initAccount 005000000001"
+echo "10.initAccount 005000000001"
 echo
 TRX_ID8=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -200,7 +200,7 @@ echo
 echo
 
 
-echo "initAccount 005000000002"
+echo "11.initAccount 005000000002"
 echo
 TRX_ID9=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -215,7 +215,7 @@ echo "Transacton ID is $TRX_ID9"
 echo
 echo
 
-echo "createSecurity A07106"
+echo "12.createSecurity A07106"
 echo
 TRX_ID10=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -230,7 +230,7 @@ echo "Transacton ID is $TRX_ID10"
 echo
 echo
 
-echo "changeSecurity 002000000001"
+echo "13.changeSecurity 002000000001"
 echo
 TRX_ID11=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -245,7 +245,7 @@ echo "Transacton ID is $TRX_ID11"
 echo
 echo
 
-echo "changeSecurity 002000000002"
+echo "14.changeSecurity 002000000002"
 echo
 TRX_ID12=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -260,7 +260,7 @@ echo "Transacton ID is $TRX_ID12"
 echo
 echo
 
-echo "changeSecurity 004000000001"
+echo "15.changeSecurity 004000000001"
 echo
 TRX_ID13=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -275,7 +275,7 @@ echo "Transacton ID is $TRX_ID13"
 echo
 echo
 
-echo "changeSecurity 004000000002"
+echo "16.changeSecurity 004000000002"
 echo
 TRX_ID14=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -290,7 +290,7 @@ echo "Transacton ID is $TRX_ID14"
 echo
 echo
 
-echo "changeSecurity 005000000001"
+echo "17.changeSecurity 005000000001"
 echo
 TRX_ID15=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -305,7 +305,7 @@ echo "Transacton ID is $TRX_ID15"
 echo
 echo
 
-echo "changeSecurity 005000000002"
+echo "18.changeSecurity 005000000002"
 echo
 TRX_ID16=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -321,7 +321,7 @@ echo
 echo
 
 
-echo "readBank BANK002"
+echo "19.readBank BANK002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK002%22%5D" \
@@ -330,7 +330,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readBank BANK004"
+echo "20.readBank BANK004"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK004%22%5D" \
@@ -339,7 +339,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readBank BANK005"
+echo "21.readBank BANK005"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK005%22%5D" \
@@ -348,7 +348,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readBank BANKCBC"
+echo "22.readBank BANKCBC"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANKCBC%22%5D" \
@@ -357,7 +357,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 002000000001"
+echo "23.readAccount 002000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000001%22%5D" \
@@ -366,7 +366,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 002000000002"
+echo "24.readAccount 002000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000002%22%5D" \
@@ -375,7 +375,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 004000000001"
+echo "25.readAccount 004000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000001%22%5D" \
@@ -384,7 +384,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 004000000002"
+echo "26.readAccount 004000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000002%22%5D" \
@@ -393,7 +393,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 005000000001"
+echo "27.readAccount 005000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000001%22%5D" \
@@ -402,7 +402,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "readAccount 005000000002"
+echo "28.readAccount 005000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000002%22%5D" \
@@ -411,7 +411,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "querySecurity A07106"
+echo "29.querySecurity A07106"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=querySecurity&args=%5B%22A07106%22%5D" \
@@ -421,7 +421,7 @@ echo
 echo
 
 
-echo "GET query chaincode on peer1 of Org1"
+echo "30.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllTransactions&args=%5B%22BANK002%22%2C%22BANK006%22%5D" \
@@ -430,7 +430,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "31.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllQueuedTransactions&args=%5B%2220180611%22%2C%2220181231%22%5D" \
@@ -439,7 +439,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "32.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllHistoryTransactions&args=%5B%22H20180611%22%2C%22H20181231%22%5D" \
@@ -448,7 +448,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query chaincode on peer1 of Org1"
+echo "33.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=get&args=%5B%22approveflag%22%5D" \
@@ -459,7 +459,7 @@ echo
 
 ############################################################################
 
-echo "GET query Block by blockNumber"
+echo "34.GET query Block by blockNumber"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/blocks/1?peer=peer0.org1.example.com" \
@@ -469,7 +469,7 @@ echo
 echo
 
 
-echo "GET query Transaction by TransactionID"
+echo "35.GET query Transaction by TransactionID"
 echo
 curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID16?peer=peer0.org1.example.com \
   -H "authorization: Bearer $ORG1_TOKEN" \
@@ -492,7 +492,7 @@ echo
 #echo
 #echo
 
-echo "GET query ChainInfo"
+echo "36.GET query ChainInfo"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel?peer=peer0.org1.example.com" \
@@ -501,7 +501,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Installed chaincodes"
+echo "37.GET query Installed chaincodes"
 echo
 curl -s -X GET \
   "http://localhost:4000/chaincodes?peer=peer0.org1.example.com" \
@@ -510,7 +510,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Instantiated chaincodes"
+echo "38.GET query Instantiated chaincodes"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes?peer=peer0.org1.example.com" \
@@ -519,7 +519,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Channels"
+echo "39.GET query Channels"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels?peer=peer0.org1.example.com" \
@@ -529,4 +529,4 @@ echo
 echo
 
 
-echo "Total execution time : $(($(date +%s)-starttime)) secs ..."
+echo "Total #39 execution time : $(($(date +%s)-starttime)) secs ..."

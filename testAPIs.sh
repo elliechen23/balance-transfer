@@ -52,7 +52,7 @@ function setChaincodePath(){
 
 setChaincodePath
 
-echo "POST request Enroll on Org1  ..."
+echo "1.POST request Enroll on Org1  ..."
 echo
 ORG1_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -63,7 +63,7 @@ ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 echo
 echo "ORG1 token is $ORG1_TOKEN"
 echo
-echo "POST request Enroll on Org2 ..."
+echo "2.POST request Enroll on Org2 ..."
 echo
 ORG2_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -75,7 +75,7 @@ echo
 echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
-echo "POST request Create channel  ..."
+echo "3.POST request Create channel  ..."
 echo
 curl -s -X POST \
   http://localhost:4000/channels \
@@ -88,7 +88,7 @@ curl -s -X POST \
 echo
 echo
 sleep 5
-echo "POST request Join channel on Org1"
+echo "4.POST request Join channel on Org1"
 echo
 curl -s -X POST \
   http://localhost:4000/channels/mychannel/peers \
@@ -100,7 +100,7 @@ curl -s -X POST \
 echo
 echo
 
-echo "POST request Join channel on Org2"
+echo "5.POST request Join channel on Org2"
 echo
 curl -s -X POST \
   http://localhost:4000/channels/mychannel/peers \
@@ -112,7 +112,7 @@ curl -s -X POST \
 echo
 echo
 
-echo "POST Install chaincode on Org1"
+echo "6.POST Install chaincode on Org1"
 echo
 curl -s -X POST \
   http://localhost:4000/chaincodes \
@@ -128,7 +128,7 @@ curl -s -X POST \
 echo
 echo
 
-echo "POST Install chaincode on Org2"
+echo "7.POST Install chaincode on Org2"
 echo
 curl -s -X POST \
   http://localhost:4000/chaincodes \
@@ -145,7 +145,7 @@ echo
 echo
 
 
-echo "GET query chaincode on peer1 of Org1"
+echo "8.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANKCBC%22%5D" \
@@ -154,7 +154,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Block by blockNumber"
+echo "9.GET query Block by blockNumber"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/blocks/1?peer=peer0.org1.example.com" \
@@ -180,7 +180,7 @@ echo
 #echo
 #echo
 
-echo "GET query ChainInfo"
+echo "10.GET query ChainInfo"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel?peer=peer0.org1.example.com" \
@@ -189,7 +189,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Installed chaincodes"
+echo "11.GET query Installed chaincodes"
 echo
 curl -s -X GET \
   "http://localhost:4000/chaincodes?peer=peer0.org1.example.com" \
@@ -199,7 +199,7 @@ echo
 echo
 
 
-echo "GET query Channels"
+echo "12.GET query Channels"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels?peer=peer0.org1.example.com" \
@@ -209,4 +209,4 @@ echo
 echo
 
 
-echo "Total execution time : $(($(date +%s)-starttime)) secs ..."
+echo "Total #12 execution time : $(($(date +%s)-starttime)) secs ..."

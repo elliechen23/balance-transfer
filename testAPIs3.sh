@@ -52,7 +52,7 @@ function setChaincodePath(){
 
 setChaincodePath
 
-echo "POST request Enroll on Org1  ..."
+echo "1.POST request Enroll on Org1  ..."
 echo
 ORG1_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -63,7 +63,7 @@ ORG1_TOKEN=$(echo $ORG1_TOKEN | jq ".token" | sed "s/\"//g")
 echo
 echo "ORG1 token is $ORG1_TOKEN"
 echo
-echo "POST request Enroll on Org2 ..."
+echo "2.POST request Enroll on Org2 ..."
 echo
 ORG2_TOKEN=$(curl -s -X POST \
   http://localhost:4000/users \
@@ -76,7 +76,8 @@ echo "ORG2 token is $ORG2_TOKEN"
 echo
 echo
 
-echo "1.自行DVP交易：BANK002-A07106-券轉出100000"
+echo "第一組實驗案例-自行DVP"
+echo "3.自行DVP交易：BANK002-A07106-券轉出100000"
 echo
 TRX_ID1=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -91,7 +92,7 @@ echo "Transacton ID is $TRX_ID1"
 echo
 echo
 
-echo "2.自行DVP交易：BANK002-A07106-券轉入100000"
+echo "4.自行DVP交易：BANK002-A07106-券轉入100000"
 echo
 TRX_ID2=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -106,7 +107,7 @@ echo "Transacton ID is $TRX_ID2"
 echo
 echo
 
-echo "3.自行DVP交易：BANK004-A07106-券轉出100000"
+echo "5.自行DVP交易：BANK004-A07106-券轉出100000"
 echo
 TRX_ID3=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -121,7 +122,7 @@ echo "Transacton ID is $TRX_ID3"
 echo
 echo
 
-echo "4.自行DVP交易：BANK004-A07106-券轉入100000"
+echo "6.自行DVP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID4=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -136,7 +137,7 @@ echo "Transacton ID is $TRX_ID4"
 echo
 echo
 
-echo "5.自行DVP交易：BANK005-A07106-券轉出100000"
+echo "7.自行DVP交易：BANK005-A07106-券轉出100000"
 echo
 TRX_ID5=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -151,7 +152,7 @@ echo "Transacton ID is $TRX_ID5"
 echo
 echo
 
-echo "6.自行DVP交易：BANK005-A07106-券轉入100000"
+echo "8.自行DVP交易：BANK005-A07106-券轉入100000"
 echo
 TRX_ID6=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -166,7 +167,8 @@ echo "Transacton ID is $TRX_ID6"
 echo
 echo
 
-echo "7.自行FOP交易：BANK002-A07106-券轉出100000"
+echo "第二組實驗案例-自行FOP"
+echo "9.自行FOP交易：BANK002-A07106-券轉出100000"
 echo
 TRX_ID7=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -181,7 +183,7 @@ echo "Transacton ID is $TRX_ID7"
 echo
 echo
 
-echo "8.自行FOP交易：BANK004-A07106-券轉入100000"
+echo "10.自行FOP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID8=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -196,7 +198,7 @@ echo "Transacton ID is $TRX_ID8"
 echo
 echo
 
-echo "9.自行FOP交易：BANK004-A07106-券轉出100000"
+echo "11.自行FOP交易：BANK004-A07106-券轉出100000"
 echo
 TRX_ID9=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -211,7 +213,7 @@ echo "Transacton ID is $TRX_ID9"
 echo
 echo
 
-echo "10.自行FOP交易：BANK004-A07106-券轉入100000"
+echo "12.自行FOP交易：BANK004-A07106-券轉入100000"
 echo
 TRX_ID10=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -226,7 +228,7 @@ echo "Transacton ID is $TRX_ID10"
 echo
 echo
 
-echo "11.自行FOP交易：BANK005-A07106-券轉出100000"
+echo "13.自行FOP交易：BANK005-A07106-券轉出100000"
 echo
 TRX_ID11=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -241,7 +243,7 @@ echo "Transacton ID is $TRX_ID11"
 echo
 echo
 
-echo "12.自行FOP交易：BANK005-A07106-券轉入100000"
+echo "14.自行FOP交易：BANK005-A07106-券轉入100000"
 echo
 TRX_ID12=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -256,7 +258,8 @@ echo "Transacton ID is $TRX_ID12"
 echo
 echo
 
-echo "13.設定同資旗標=0(自動比對Finished)"
+echo "第三組實驗案例-跨行DVP-成功"
+echo "15.設定同資旗標=0(自動比對Finished)"
 echo
 TRX_ID13=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -271,7 +274,7 @@ echo "Transacton ID is $TRX_ID13"
 echo
 echo
 
-echo "14.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
+echo "16.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID14=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -286,7 +289,7 @@ echo "Transacton ID is $TRX_ID14"
 echo
 echo
 
-echo "15.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
+echo "17.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID15=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -301,7 +304,7 @@ echo "Transacton ID is $TRX_ID15"
 echo
 echo
 
-echo "16.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
+echo "18.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID16=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -316,7 +319,7 @@ echo "Transacton ID is $TRX_ID16"
 echo
 echo
 
-echo "17.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
+echo "19.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID17=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -331,7 +334,7 @@ echo "Transacton ID is $TRX_ID17"
 echo
 echo
 
-echo "18.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
+echo "20.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID18=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -346,7 +349,7 @@ echo "Transacton ID is $TRX_ID18"
 echo
 echo
 
-echo "19.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
+echo "21.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID19=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -361,7 +364,9 @@ echo "Transacton ID is $TRX_ID19"
 echo
 echo
 
-echo "20.設定同資旗標=1(等同資回應Waiting4Payment)"
+echo "第四組實驗案例-跨行DVP-等待回應"
+echo "第六組實驗案例-跨行DVP-等待回應-交易放行"
+echo "22.設定同資旗標=1(等同資回應Waiting4Payment)"
 echo
 TRX_ID20=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -377,7 +382,7 @@ echo
 echo
 
 
-echo "21.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
+echo "23.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID21=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -392,7 +397,7 @@ echo "Transacton ID is $TRX_ID21"
 echo
 echo
 
-echo "22.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
+echo "24.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID22=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -407,7 +412,7 @@ echo "Transacton ID is $TRX_ID22"
 echo
 echo
 
-echo "23.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
+echo "25.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID23=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -422,7 +427,7 @@ echo "Transacton ID is $TRX_ID23"
 echo
 echo
 
-echo "24.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
+echo "26.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID24=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -437,7 +442,7 @@ echo "Transacton ID is $TRX_ID24"
 echo
 echo
 
-echo "25.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
+echo "27.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID25=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -452,7 +457,7 @@ echo "Transacton ID is $TRX_ID25"
 echo
 echo
 
-echo "26.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
+echo "28.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID26=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -467,7 +472,9 @@ echo "Transacton ID is $TRX_ID26"
 echo
 echo
 
-echo "27.設定同資旗標=2(PaymentError)"
+echo "第五組實驗案例-跨行DVP-款不足"
+echo "第七組實驗案例-跨行DVP-款不足-交易取消"
+echo "29.設定同資旗標=2(PaymentError)"
 echo
 TRX_ID27=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -482,7 +489,7 @@ echo "Transacton ID is $TRX_ID27"
 echo
 echo
 
-echo "28.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
+echo "30.跨行DVP交易：BANK002-BANK004-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID28=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -497,7 +504,7 @@ echo "Transacton ID is $TRX_ID28"
 echo
 echo
 
-echo "29.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
+echo "31.跨行DVP交易：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID29=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -512,7 +519,7 @@ echo "Transacton ID is $TRX_ID29"
 echo
 echo
 
-echo "30.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
+echo "32.跨行DVP交易：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID30=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -527,7 +534,7 @@ echo "Transacton ID is $TRX_ID30"
 echo
 echo
 
-echo "31.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
+echo "33.跨行DVP交易：BANK005-BANK004-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID31=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -542,7 +549,7 @@ echo "Transacton ID is $TRX_ID31"
 echo
 echo
 
-echo "32.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
+echo "34.跨行DVP交易：BANK005-BANK002-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID32=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -557,7 +564,7 @@ echo "Transacton ID is $TRX_ID32"
 echo
 echo
 
-echo "33.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
+echo "35.跨行DVP交易：BANK002-BANK005-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID33=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -572,7 +579,7 @@ echo "Transacton ID is $TRX_ID33"
 echo
 echo
 
-echo "34.設定同資旗標=5(自動比對券款)"
+echo "36.設定同資旗標=5(自動比對券款)"
 echo
 TRX_ID34=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -581,13 +588,15 @@ TRX_ID34=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"put",
-	"args":["approveflag" , "1"]
+	"args":["approveflag" , "5"]
 }')
 echo "Transacton ID is $TRX_ID34"
 echo
 echo
 
-echo "35.跨行DVP交易券打錯：BANK002-BANK004-A07106-券轉出101000-款轉入102000"
+echo "第八組實驗案例-跨行DVP-交易面額輸錯"
+echo "第十二組實驗案例-跨行DVP-交易面額輸錯-交易更正"
+echo "37.跨行DVP交易面額輸錯：BANK002-BANK004-A07106-券轉出101000-款轉入102000"
 echo
 TRX_ID35=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -602,7 +611,7 @@ echo "Transacton ID is $TRX_ID35"
 echo
 echo
 
-echo "36.跨行DVP交易券打錯：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
+echo "38.跨行DVP交易面額打錯：BANK004-BANK002-A07106-券轉入100000-款轉出102000"
 echo
 TRX_ID36=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -618,8 +627,9 @@ echo
 echo
 
 
-
-echo "37.跨行DVP交易款打錯：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
+echo "第九組實驗案例-跨行DVP-交易金額輸錯"
+echo "第十三組實驗案例-跨行DVP-交易金額輸錯-交易更正"
+echo "39.跨行DVP交易金額打錯：BANK004-BANK005-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID37=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -634,7 +644,7 @@ echo "Transacton ID is $TRX_ID37"
 echo
 echo
 
-echo "38.跨行DVP交易款打錯：BANK005-BANK004-A07106-券轉入100000-款轉出101000"
+echo "40.跨行DVP交易金額打錯：BANK005-BANK004-A07106-券轉入100000-款轉出101000"
 echo
 TRX_ID38=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -649,7 +659,8 @@ echo "Transacton ID is $TRX_ID38"
 echo
 echo
 
-echo "39.跨行DVP交易券不足：BANK005-BANK002-A07106-券轉出10000000-款轉入102000"
+echo "第十組實驗案例-跨行DVP-賣方券不足"
+echo "41.跨行DVP交易券不足：BANK005-BANK002-A07106-券轉出10000000-款轉入102000"
 echo
 TRX_ID39=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -664,7 +675,8 @@ echo "Transacton ID is $TRX_ID39"
 echo
 echo
 
-echo "40.跨行DVP交易款不足：BANK002-BANK005-A07106-券轉出100000-款轉入10200000"
+echo "第十組實驗案例-跨行DVP-買方款不足"
+echo "42.跨行DVP交易款不足：BANK002-BANK005-A07106-券轉出100000-款轉入10200000"
 echo
 TRX_ID40=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -679,8 +691,8 @@ echo "Transacton ID is $TRX_ID40"
 echo
 echo
 
-
-echo "41.公債利息更新A07106-2019/06/02應計利息試算"
+echo "第十四組實驗案例-利息計算與配息"
+echo "43.公債利息更新A07106-2019/06/02應計利息試算"
 echo
 TRX_ID41=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -696,7 +708,7 @@ echo
 echo
 
 
-echo "42.公債利息更新A07106-BANK002-2019/06/02應計利息試算"
+echo "44.公債利息更新A07106-BANK002-2019/06/02應計利息試算"
 echo
 TRX_ID42=$(curl -s -X POST \
   http://localhost:4000/channels/mychannel/chaincodes/mycc \
@@ -711,7 +723,7 @@ echo "Transacton ID is $TRX_ID42"
 echo
 echo
 
-echo "43.公債利息更新A07106-BANK004-2019/06/02應計利息試算"
+echo "45.公債利息更新A07106-BANK004-2019/06/02應計利息試算"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID43=$(curl -s -X POST \
@@ -727,7 +739,7 @@ echo "Transacton ID is $TRX_ID43"
 echo
 echo
 
-echo "44.公債利息更新A07106-BANK005-2019/06/02應計利息試算"
+echo "46.公債利息更新A07106-BANK005-2019/06/02應計利息試算"
 echo "POST invoke chaincode on peers of Org1"
 echo
 TRX_ID44=$(curl -s -X POST \
@@ -745,7 +757,7 @@ echo
 
 
 
-echo "45.readBank BANK002"
+echo "47.readBank BANK002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK002%22%5D" \
@@ -754,7 +766,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "46.readBank BANK004"
+echo "48.readBank BANK004"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK004%22%5D" \
@@ -763,7 +775,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "47.readBank BANK005"
+echo "49.readBank BANK005"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANK005%22%5D" \
@@ -772,7 +784,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "48.readBank BANKCBC"
+echo "50.readBank BANKCBC"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readBank&args=%5B%22BANKCBC%22%5D" \
@@ -781,7 +793,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "49.readAccount 002000000001"
+echo "51.readAccount 002000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000001%22%5D" \
@@ -790,7 +802,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "50.readAccount 002000000002"
+echo "52.readAccount 002000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22002000000002%22%5D" \
@@ -799,7 +811,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "51.readAccount 004000000001"
+echo "53.readAccount 004000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000001%22%5D" \
@@ -808,7 +820,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "52.readAccount 004000000002"
+echo "54.readAccount 004000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22004000000002%22%5D" \
@@ -817,7 +829,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "53.readAccount 005000000001"
+echo "55.readAccount 005000000001"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000001%22%5D" \
@@ -826,7 +838,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "54.readAccount 005000000002"
+echo "56.readAccount 005000000002"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=readAccount&args=%5B%22005000000002%22%5D" \
@@ -835,7 +847,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "55.querySecurity A07106"
+echo "57.querySecurity A07106"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=querySecurity&args=%5B%22A07106%22%5D" \
@@ -845,7 +857,7 @@ echo
 echo
 
 
-echo "56.queryAllTransactions"
+echo "58.queryAllTransactions"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllTransactions&args=%5B%22BANK002%22%2C%22BANK006%22%5D" \
@@ -854,7 +866,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "57.queryAllQueuedTransactions"
+echo "59.queryAllQueuedTransactions"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllQueuedTransactions&args=%5B%2220180611%22%2C%2220181231%22%5D" \
@@ -863,7 +875,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "58.queryAllHistoryTransactions"
+echo "60.queryAllHistoryTransactions"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllHistoryTransactions&args=%5B%22H20180611%22%2C%22H20181231%22%5D" \
@@ -872,7 +884,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "59.同資旗標：approveflag"
+echo "61.同資旗標：approveflag"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=get&args=%5B%22approveflag%22%5D" \
@@ -883,7 +895,7 @@ echo
 
 ############################################################################
 
-echo "60.GET query Block by blockNumber"
+echo "62.GET query Block by blockNumber"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/blocks/1?peer=peer0.org1.example.com" \
@@ -893,7 +905,7 @@ echo
 echo
 
 
-echo "61.GET query Transaction by TransactionID"
+echo "63.GET query Transaction by TransactionID"
 echo
 curl -s -X GET http://localhost:4000/channels/mychannel/transactions/$TRX_ID16?peer=peer0.org1.example.com \
   -H "authorization: Bearer $ORG1_TOKEN" \
@@ -916,7 +928,7 @@ echo
 #echo
 #echo
 
-echo "GET query ChainInfo"
+echo "64.GET query ChainInfo"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel?peer=peer0.org1.example.com" \
@@ -925,7 +937,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Installed chaincodes"
+echo "65.GET query Installed chaincodes"
 echo
 curl -s -X GET \
   "http://localhost:4000/chaincodes?peer=peer0.org1.example.com" \
@@ -934,7 +946,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Instantiated chaincodes"
+echo "66.GET query Instantiated chaincodes"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels/mychannel/chaincodes?peer=peer0.org1.example.com" \
@@ -943,7 +955,7 @@ curl -s -X GET \
 echo
 echo
 
-echo "GET query Channels"
+echo "67.GET query Channels"
 echo
 curl -s -X GET \
   "http://localhost:4000/channels?peer=peer0.org1.example.com" \
@@ -953,4 +965,4 @@ echo
 echo
 
 
-echo "Total execution time : $(($(date +%s)-starttime)) secs ..."
+echo "Total #67 execution time : $(($(date +%s)-starttime)) secs ..."

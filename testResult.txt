@@ -1,0 +1,54 @@
+1.POST request Enroll on Org1  ...
+
+{"success":true,"secret":"","message":"Jim enrolled Successfully","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzA0NjMwMDYsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1MzA0MjcwMDZ9.9nmEeUq2zRavF00rr7R7sgvn2gtGQlx-ppynSqN2w5Q"}
+
+ORG1 token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzA0NjMwMDYsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1MzA0MjcwMDZ9.9nmEeUq2zRavF00rr7R7sgvn2gtGQlx-ppynSqN2w5Q
+
+2.POST request Enroll on Org2 ...
+
+{"success":true,"secret":"","message":"Barry enrolled Successfully","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzA0NjMwMDksInVzZXJuYW1lIjoiQmFycnkiLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTUzMDQyNzAwOX0.LMDOtd_8ZVgRXJHVoAWLO6OANHNUPsQLtOO0p_GpDe8"}
+
+ORG2 token is eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzA0NjMwMDksInVzZXJuYW1lIjoiQmFycnkiLCJvcmdOYW1lIjoiT3JnMiIsImlhdCI6MTUzMDQyNzAwOX0.LMDOtd_8ZVgRXJHVoAWLO6OANHNUPsQLtOO0p_GpDe8
+
+
+3.POST request Create channel  ...
+
+{"success":true,"message":"Channel 'mychannel' created Successfully"}
+
+4.POST request Join channel on Org1
+
+{"success":true,"message":"Successfully joined peers in organization Org1 to the channel:mychannel"}
+
+5.POST request Join channel on Org2
+
+{"success":true,"message":"Successfully joined peers in organization Org2 to the channel:mychannel"}
+
+6.POST Install chaincode on Org1
+
+{"success":true,"message":"Successfully install chaincode"}
+
+7.POST Install chaincode on Org2
+
+{"success":true,"message":"Successfully install chaincode"}
+
+8.GET query chaincode on peer1 of Org1
+
+Error: 2 UNKNOWN: make sure the chaincode mycc has been successfully instantiated and try again: could not find chaincode with name 'mycc'
+
+9.GET query Block by blockNumber
+
+Error: 2 UNKNOWN: chaincode error (status: 500, message: Failed to get block number 1, error Entry not found in index)
+
+10.GET query ChainInfo
+
+{"height":{"low":1,"high":0,"unsigned":true},"currentBlockHash":{"buffer":{"type":"Buffer","data":[8,1,18,32,179,222,241,107,57,190,224,147,208,67,220,122,206,39,106,216,52,17,127,46,2,17,232,220,78,85,89,213,138,161,129,36]},"offset":4,"markedOffset":-1,"limit":36,"littleEndian":true,"noAssert":false},"previousBlockHash":{"buffer":{"type":"Buffer","data":[]},"offset":0,"markedOffset":-1,"limit":0,"littleEndian":false,"noAssert":false}}
+
+11.GET query Installed chaincodes
+
+["name: mycc, version: v0, path: github.com/cgschaincode"]
+
+12.GET query Channels
+
+{"channels":[{"channel_id":"mychannel"}]}
+
+Total #12 execution time : 13 secs ...
