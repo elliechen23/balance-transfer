@@ -653,7 +653,7 @@ TRX_ID38=$(curl -s -X POST \
   -d '{
 	"peers": ["peer0.org1.example.com","peer1.org1.example.com"],
 	"fcn":"securityTransfer",
-	"args":["B","005000000001" , "004000000001" , "A07106" , "101000","100000","true"]
+	"args":["S","005000000001" , "004000000001" , "A07106" , "101000","100000","true"]
 }')
 echo "Transacton ID is $TRX_ID38"
 echo
