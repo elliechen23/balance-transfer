@@ -424,6 +424,7 @@ echo
 echo "30.GET query chaincode on peer1 of Org1"
 echo
 curl -s -X GET \
+  "http://localhost:4000/channels/mychannel/chaincodes/mycc?peer=peer0.org1.example.com&fcn=queryAllTransactions&args=%5B%22BK002%22%2C%22BK006%22%5D" \
   -H "authorization: Bearer $ORG1_TOKEN" \
   -H "content-type: application/json"
 echo
