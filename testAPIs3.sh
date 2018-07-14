@@ -365,7 +365,7 @@ echo
 echo
 
 echo "第四組實驗案例-跨行DVP-等待回應"
-echo "第六組實驗案例-跨行DVP-等待回應-交易放行"
+echo "第七組實驗案例-跨行DVP-等待回應-交易放行"
 echo "22.設定同資旗標=1(等同資回應Waiting4Payment)"
 echo
 TRX_ID20=$(curl -s -X POST \
@@ -473,7 +473,7 @@ echo
 echo
 
 echo "第五組實驗案例-跨行DVP-款不足"
-echo "第七組實驗案例-跨行DVP-款不足-交易取消"
+echo "第八組實驗案例-跨行DVP-款不足-交易取消"
 echo "29.設定同資旗標=2(PaymentError)"
 echo
 TRX_ID27=$(curl -s -X POST \
@@ -594,8 +594,8 @@ echo "Transacton ID is $TRX_ID34"
 echo
 echo
 
-echo "第八組實驗案例-跨行DVP-交易面額輸錯"
-echo "第十二組實驗案例-跨行DVP-交易面額輸錯-交易更正"
+echo "第九組實驗案例-跨行DVP-交易面額輸錯"
+echo "第十三組實驗案例-跨行DVP-交易面額輸錯-交易更正"
 echo "37.跨行DVP交易面額輸錯：BANK002-BANK004-A07106-券轉出101000-款轉入102000"
 echo
 TRX_ID35=$(curl -s -X POST \
@@ -627,8 +627,8 @@ echo
 echo
 
 
-echo "第九組實驗案例-跨行DVP-交易金額輸錯"
-echo "第十三組實驗案例-跨行DVP-交易金額輸錯-交易更正"
+echo "第十組實驗案例-跨行DVP-交易金額輸錯"
+echo "第十四組實驗案例-跨行DVP-交易金額輸錯-交易更正"
 echo "39.跨行DVP交易金額打錯：BANK005-BANK004-A07106-券轉出100000-款轉入102000"
 echo
 TRX_ID37=$(curl -s -X POST \
@@ -659,7 +659,7 @@ echo "Transacton ID is $TRX_ID38"
 echo
 echo
 
-echo "第十組實驗案例-跨行DVP-賣方券不足"
+echo "第十一組實驗案例-跨行DVP-賣方券不足"
 echo "41.跨行DVP交易券不足：BANK005-BANK002-A07106-券轉出10000000-款轉入102000"
 echo
 TRX_ID39=$(curl -s -X POST \
@@ -675,7 +675,7 @@ echo "Transacton ID is $TRX_ID39"
 echo
 echo
 
-echo "第十組實驗案例-跨行DVP-買方款不足"
+echo "第十二組實驗案例-跨行DVP-買方款不足"
 echo "42.跨行DVP交易款不足：BANK002-BANK005-A07106-券轉出100000-款轉入10200000"
 echo
 TRX_ID40=$(curl -s -X POST \
@@ -691,7 +691,7 @@ echo "Transacton ID is $TRX_ID40"
 echo
 echo
 
-echo "第十四組實驗案例-利息計算與配息"
+echo "第十五組實驗案例-利息計算與配息"
 echo "43.公債利息更新A07106-2019/06/02應計利息試算"
 echo
 TRX_ID41=$(curl -s -X POST \
